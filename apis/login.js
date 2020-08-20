@@ -5,15 +5,6 @@ const user = require('../model/UserSchema');
 
 const router = express.Router();
 
-router.get('/', (req, res)=>{
-    console.log(req.query.username);
-    const {username} = req.query;
-    user.findOne({username}, (err, data)=>{
-        if(data)res.json({match: true})
-        else res.json({match: false});
-    })
-});
-
 router.post('/', (req, res)=>{
     res.status(201);
     const {username, password} = req.body;
@@ -21,12 +12,12 @@ router.post('/', (req, res)=>{
         .then((data)=>{
             bcrypt.compare(password, data.password)
             .then(result=>{
-                let {_id, groups, username, photo} = data;
-                res.json({match:true, _id, groups, username, photo})
+                let {groups, username, photoURL, _id} = data;
+                res.json({groups, username, photoURL, _id})
             })
-            .catch(err=>res.json({match:false}))
+            .catch(err=>res.json({login:false}))
         })
-        .catch(err=>res.json({match: false}))    
+        .catch(err=>res.json({login: false}))    
 });
 
 module.exports = router;

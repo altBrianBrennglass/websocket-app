@@ -17,7 +17,6 @@ router.put('/', (req, res)=>{
     const {name, user} = req.body;
     console.log(name, user);
     groups.findOneAndUpdate({name}, { $addToSet: {users: {$each: user}}})
-   .then(duck=>console.log(duck))
    .catch(err=>console.log(err));
 });
 

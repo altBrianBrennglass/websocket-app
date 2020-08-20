@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const login = require('./apis/login');
 const register = require('./apis/register');
+const loginRegisterEvaluate = ('./apis/loginRegisterEvaluate');
 const groups = require('./apis/groups');
 const searchUsers = require('./apis/searchUsers');
 
