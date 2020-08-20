@@ -4,13 +4,13 @@ const express = require('express');
 const router = express.Router();
 
 router.post('/', (req, res)=>{
-    const {name, owner} = req.body;
+    const {room, owner} = req.body;
     const newGroup = new groups({
-        owner, name
+        owner, room
     })
     newGroup.save()
     .then(()=>res.json({group: "created"}))
-    .catch(err=>console.log(err))
+    .catch(res.json({group: 'not created'}))
 });
 
 router.put('/', (req, res)=>{
@@ -21,15 +21,14 @@ router.put('/', (req, res)=>{
 });
 
 router.get('/', (req, res)=>{
-    const owner = req.query.owner;
-    groups.findOne({owner})
+    const room = req.query.owner;
+    groups.findOne({room})
     .then(result=>res.json(result))
     .catch(err=>console.log(err));
 })
 
 router.delete('/', (req, res)=>{
-    const name = req.body.name;
-    console.log(name)
+    const room = req.body.room;
     groups.findOneAndDelete({name})
     .then(ignr=>res.json({deleted: true}))
     .catch(err=>console.log(err));

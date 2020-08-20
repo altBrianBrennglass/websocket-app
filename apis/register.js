@@ -13,8 +13,8 @@ router.post('/', (req, res)=>{
         const newUser = new user({ password: hash, email, username});
         newUser.save()
         .then(results=>{
-            const {_id, groups, username} = newUser;
-            res.json({_id, username});
+            const {_id, username} = newUser;
+            res.json({_id, username, bioPage: true});
         })
         .catch(err=>failure = err);
     });

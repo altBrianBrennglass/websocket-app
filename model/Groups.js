@@ -3,7 +3,7 @@ const {Schema, model} = mongoose;
 
 const groups = Schema({
     owner: String,
-    name: String,
+    room: String,
     users: Array
 })
 
