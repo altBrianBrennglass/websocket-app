@@ -4,7 +4,12 @@ const user = require('../model/UserSchema');
 
 const router = express.Router();
 
-router.get('/usera', (req, res)=>{
+router.get('/', (req, res)=>{
+    console.log('called');
+});
+
+router.get('/email', (req, res)=>{
+    console.log('called');
     const {email} = req.query;
         user.findOne({email}, (err, data)=>{
             if(data)res.json({emailTaken: true})

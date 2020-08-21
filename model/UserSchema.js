@@ -7,8 +7,14 @@ const user = Schema({
     email: String,
     password: String,
     groups: Array,
-    photoURL: String,
-    bio: String
+    photoURL: {
+        type: String,
+        default: 'none'
+    },
+    bio: {
+        type: String,
+        default: 'N/A'
+    }
 })
 
 const model = mongoose.model('user', user);

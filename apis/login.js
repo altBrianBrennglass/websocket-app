@@ -12,8 +12,11 @@ router.post('/', (req, res)=>{
         .then((data)=>{
             bcrypt.compare(password, data.password)
             .then(result=>{
-                let {groups, username, photoURL, _id} = data;
-                res.json({groups, username, photoURL, _id})
+                if(result){
+                    let {groups, username, photoURL, _id} = data;
+                    res.json({groups, username, photoURL, _id})
+                }
+                else return new Error('false password');
             })
             .catch(err=>res.json({login:false}))
         })

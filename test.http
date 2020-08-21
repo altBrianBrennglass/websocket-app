@@ -1,0 +1,84 @@
+
+//loginRegisterEvaluate: determines if an email or username is valid for both login and register
+    //Tests path to see if it's available
+    GET http://localhost:8080/loginRegisterEvaluate HTTP/1.1
+
+    //email validation
+    GET http://localhost:8080/loginRegisterEvaluate/email/?email=bbrenng1@binghamton.edu HTTP/1.1
+    
+    //username validation
+    GET http://localhost:8080/loginRegisterEvaluate/username/?username=gail HTTP/1.1
+
+###
+
+//register: registers a user
+    POST http://localhost:8080/register HTTP/1.1
+    content-type: application/json
+
+    {
+        "username": "gail",
+        "email": "bbrenng1@binghamton.edu",
+        "password": "boatmonkey5"
+    }
+
+###
+
+//login: logins a user
+
+    POST http://localhost:8080/login HTTP/1.1
+    content-type: application/json
+
+    {
+        "username": "gail",
+        "password": "boatmonkey5"
+    }
+
+###
+
+//groups: used to create, update and delete rooms
+
+//Creates a new room 
+POST http://localhost:8080/groups HTTP/1.1
+content-type: application/json
+
+{
+    "owner": "gail",
+    "room": "gamer bros"
+}
+
+//update the users of a group:
+PUT http://localhost:8080/groups HTTP/1.1
+content-type: application/json
+
+{
+    "user": ["gail"],
+    "room": "gamer bros"
+}
+
+//get group
+
+GET http://localhost:8080/groups/?room=gamer%20bros
+
+//delete group
+
+DELETE http://localhost:8080/groups/
+content-type: application/json
+
+{
+    "room": "gamer bros"
+}
+
+###
+
+//creates bio
+
+POST http://localhost:8080/bioPage HTTP/1.1
+content-type: application/json
+
+{
+    "username": "gasdfasdf",
+    "bio": "hi, my name is gail. I like to gourge on fruit cake 7 days a week",
+    "photoURL": "www.fb.com"
+}
+
+
