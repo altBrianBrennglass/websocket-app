@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-set": "mv -v ./build/* .",
-    "clean": "rm asset-manifest.json favicon.ico index.html logo192.png logo512.png manifest.json robots.txt service-workers.js precache-manifest.* && rm -r ./static"
+    "clean": "rm asset-manifest.json favicon.ico index.html logo192.png logo512.png manifest.json robots.txt service-workers.js precache-manifest.* && rm -r static"
   },
   "eslintConfig": {
     "extends": "react-app"

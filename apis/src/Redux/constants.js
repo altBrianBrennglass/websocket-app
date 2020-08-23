@@ -1,0 +1,4 @@
+const USERDATA = 'USERDATA';
+const LOGGEDIN = 'LOGGEDIN';
+
+export {USERDATA, LOGGEDIN};
