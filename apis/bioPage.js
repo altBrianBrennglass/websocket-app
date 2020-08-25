@@ -1,11 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const user = require('../model/UserSchema');
+const upload = require('multer');
 
 
 const router = express.Router();
 
-router.post('/', (req, res)=>{
+router.post('/', upload.single('image'), (req, res)=>{
     const {username, photoURL, bio} = req.body;
     console.log(username, photoURL, bio);
     user.findOneAndUpdate(username, {bio, photoURL})

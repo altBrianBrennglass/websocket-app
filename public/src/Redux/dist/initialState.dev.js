@@ -15,7 +15,8 @@ var intitialState = {
     username: '',
     groups: [],
     photoURL: ''
-  }
+  },
+  photoEnc: ''
 };
 var _default = intitialState;
 exports["default"] = _default;

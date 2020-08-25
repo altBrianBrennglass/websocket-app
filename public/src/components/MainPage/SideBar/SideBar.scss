@@ -1,0 +1,98 @@
+
+.hamburgerBox{
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    border: solid black 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hamburger{
+    width: 40px;
+    height: 10px;
+    border-radius: 15px;
+    background-color: white;
+    transition: all .5s ease-in-out;
+}
+
+.hamburger::before, .hamburger::after{
+    content: '';
+    width: 40px;
+    height: 10px;
+    border-radius: 15px;
+    position: absolute;
+    display: block;
+    background-color: white;
+    transition: transform .5s ease-in-out;
+}
+
+.hamburger::before{
+    transform: translateY(-16px);
+}
+.hamburger::after{
+    transform: translateY(16px);
+}
+
+.hamburgerBox.open .hamburger::after{
+    transition: transform .5s;
+    transform: translateY(0) rotate(45deg);
+}
+
+.hamburgerBox.open .hamburger::before{
+    transition: transform .5s;
+    transform: translateY(0) rotate(-45deg);
+}
+.hamburgerBox.open .hamburger{
+    transition: background-color .5s;
+    background-color: transparent;
+}
+
+
+
+
+.group-container{
+    height: calc(100vh - 86.5px);
+    width: 250px;
+    background-color: red;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.create-group-button-box{
+    display: flex;
+    justify-content: center;
+}
+.create-group-button{
+    box-sizing: border-box;
+    height: 50px;
+    width: 200px;
+    padding: 10px;
+    margin: auto;
+    display: inline-block;
+    border-radius: 15px;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    border: solid #aab8c2 2px;
+    color: white;
+    background-color: #1d56f2;
+}
+
+.group-display{
+    overflow-y: scroll;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 1;
+    align-items: stretch;
+    justify-content: center;
+    height: 80%;
+    width: 80%;
+    background-color: goldenrod;
+    margin-top: 10px;
+}
+

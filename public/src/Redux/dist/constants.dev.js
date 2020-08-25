@@ -3,6 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.STOREONREGISTER = void 0;
+exports.SAVEPHOTO = exports.STOREONREGISTER = void 0;
 var STOREONREGISTER = 'STOREONREGISTER';
 exports.STOREONREGISTER = STOREONREGISTER;
+var SAVEPHOTO = 'SAVEPHOTO';
+exports.SAVEPHOTO = SAVEPHOTO;

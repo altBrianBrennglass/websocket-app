@@ -31,7 +31,11 @@ var reducer = function reducer() {
           bioPage: bioPage
         }
       });
-      break;
+
+    case _constants.SAVEPHOTO:
+      return Object.assign({}, state, {
+        photoEnc: action.photoEnc
+      });
 
     default:
       console.log('default');

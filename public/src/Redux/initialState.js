@@ -9,7 +9,8 @@ const intitialState = {
         username: '',
         groups: [],
         photoURL: ''
-    }
+    },
+    photoEnc: ''
 }
 
 export default intitialState;

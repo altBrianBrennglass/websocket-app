@@ -1,4 +1,4 @@
-import {STOREONREGISTER} from './constants';
+import {STOREONREGISTER, SAVEPHOTO} from './constants';
 
 
 const infoOnRegister = (userData)=>{
@@ -8,4 +8,12 @@ const infoOnRegister = (userData)=>{
     }
 }
 
+const savePhoto = (photoEnc)=>{
+    return {
+        type: SAVEPHOTO,
+        photoEnc
+    }
+}
+
+export default savePhoto;
 export {infoOnRegister};

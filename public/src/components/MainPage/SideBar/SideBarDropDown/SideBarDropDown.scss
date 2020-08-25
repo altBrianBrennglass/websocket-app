@@ -1,0 +1,49 @@
+.nameDisplay{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    font-size: 1.3em;
+    font-family: sans-serif;
+    height: 50px;
+    border-bottom: 1px black solid;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.chevron{
+    display: block;
+    box-sizing: border-box;
+    border-width: 2px;
+    border-color: grey;
+    height: 12px;
+    width: 12px;
+    border-top-style: solid;
+    border-left-style: solid;    
+}
+
+.nameDisplay.down .chevron{
+    transform: rotate(45deg);
+    position: relative;
+    top: 6px;
+}
+.nameDisplay.up .chevron{
+    transform: rotate(-135deg) ;
+}
+
+.userDisplay.down{
+    display: none;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.userThumbnail{
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+    border: solid 1px black;
+}

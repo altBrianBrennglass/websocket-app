@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.infoOnRegister = void 0;
+exports.infoOnRegister = exports["default"] = void 0;
 
 var _constants = require("./constants");
 
@@ -15,3 +15,13 @@ var infoOnRegister = function infoOnRegister(userData) {
 };
 
 exports.infoOnRegister = infoOnRegister;
+
+var savePhoto = function savePhoto(photoEnc) {
+  return {
+    type: _constants.SAVEPHOTO,
+    photoEnc: photoEnc
+  };
+};
+
+var _default = savePhoto;
+exports["default"] = _default;
