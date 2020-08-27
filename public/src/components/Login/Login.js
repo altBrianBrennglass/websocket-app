@@ -5,6 +5,7 @@ import './Login.scss';
 import axios from 'axios';
 import {infoOnRegister} from '../../Redux/actions'
 import {useDispatch} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 const Login = ()=>{
     const [loginOrRegister, setLoginOrRegister] = useState('Register');
@@ -101,7 +102,9 @@ const submitHandler = (e, loginOrRegister, email, username, password)=>{
                         
                     </div>
                     <div className = 'labelInputBox'>
-                        <button className = 'submitButton' >SUBMIT</button>
+                        <Link to = {loginOrRegister === 'Login'? '/MainGroup': '/BioPage'}>
+                                <button className = 'submitButton' >SUBMIT</button>
+                        </Link>
                     </div>
                 </form>
             </div>

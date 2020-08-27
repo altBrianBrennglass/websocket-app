@@ -12,7 +12,7 @@ var intitialState = {
   },
   userData: {
     _id: '',
-    username: '',
+    username: 'pixelBot',
     groups: [],
     photoURL: ''
   },

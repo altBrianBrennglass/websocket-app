@@ -1,0 +1,17 @@
+.MessageBox {
+  border-top: solid #fafafa 1px;
+  display: flex;
+}
+
+.MessageBox.You {
+  flex-direction: row-reverse;
+}
+
+.user {
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.message-box {
+  font-family: sans-serif;
+}

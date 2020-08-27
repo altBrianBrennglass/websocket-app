@@ -1,0 +1,14 @@
+.MainPage {
+  display: grid;
+  grid-template-columns: 270px auto;
+  grid-template-rows: 20px 100%;
+  grid-template-areas: ". ." "Sidebar Chat";
+}
+
+.SideBar {
+  grid-area: Sidebar;
+}
+
+.Chat {
+  grid-area: Chat;
+}

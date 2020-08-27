@@ -6,7 +6,7 @@ const upload = require('multer');
 
 const router = express.Router();
 
-router.post('/', upload.single('image'), (req, res)=>{
+router.post('/', (req, res)=>{
     const {username, photoURL, bio} = req.body;
     console.log(username, photoURL, bio);
     user.findOneAndUpdate(username, {bio, photoURL})
