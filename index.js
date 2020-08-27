@@ -1,3 +1,4 @@
+                require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -7,8 +8,7 @@ const bioPage = require('./apis/bioPage');
 const loginRegisterEvaluate = require('./apis/loginRegisterEvaluate');
 const groups = require('./apis/groups');
 const searchUsers = require('./apis/searchUsers');
-
-mongoose.connect(`mongodb+srv://BrianBrennglass:Pickles123!456789@websocketapp.yrgkr.mongodb.net/websocketApp?retryWrites=true&w=majority`,
+mongoose.connect(`mongodb+srv://BrianBrennglass:${process.env.PASSWORD}@websocketapp.yrgkr.mongodb.net/websocketApp?retryWrites=true&w=majority`,
                  {
                     useNewUrlParser: true, 
                     useUnifiedTopology: true,
